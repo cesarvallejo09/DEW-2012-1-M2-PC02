@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  machine_tags: MyString
+  per_page: MyString
+
+two:
+  machine_tags: MyString
+  per_page: MyString

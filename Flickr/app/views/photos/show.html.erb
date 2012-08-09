@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Machine tags:</b>
+  <%= @photo.machine_tags %>
+</p>
+
+<p>
+  <b>Per page:</b>
+  <%= @photo.per_page %>
+</p>
+
+
+<%= link_to 'Edit', edit_photo_path(@photo) %> |
+<%= link_to 'Back', photos_path %>

@@ -1,0 +1,28 @@
+
+
+<!--
+http://farm1.staticflickr.com/2/1418878_1e92283336_m.jpg
+
+farm-id: 1
+server-id: 2
+photo-id: 1418878
+secret: 1e92283336
+size: m
+-->
+
+<% list = flickr.interestingness.getList(:machine_tags => 'hola que tal',:per_page => '2') %>
+
+<table>
+  	<% list.each do |photo| %>
+	<tr>			
+		<td>			
+		  	<% farm = photo.farm %>
+		  	<% server = photo.server %>
+		  	<% id = photo.id %>
+		  	<% secret = photo.secret %>
+		  	
+		  	<img src="<%= 'http://farm' %><%=farm%><%= '.staticflickr.com/' %><%= server %><%= '/' %><%= id%><%= '_' %><%= secret %><%= '_m' %><%= '.jpg'%>" />			
+		</td>
+	</tr>
+  	<% end %>	
+</table>
