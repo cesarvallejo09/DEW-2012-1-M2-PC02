@@ -18,7 +18,7 @@
 	</tr>	
 </table>
 
-<% list = flickr.interestingness.getList(:tag => @photo.machine_tags, :per_page => @photo.per_page) %>
+<% list = flickr.photos.search(:tags => @photo.machine_tags, :per_page => @photo.per_page) %>
 
 <table>
   	<% list.each do |photo| %>
