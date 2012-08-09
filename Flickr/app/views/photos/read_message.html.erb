@@ -1,14 +1,22 @@
 
+<h1>¿Qué fotos te interesan?... Busca aquí...</h1>
 
-<!--
-http://farm1.staticflickr.com/2/1418878_1e92283336_m.jpg
+<%= form_for(@photo, :url => "user") do |f| %>
 
-farm-id: 1
-server-id: 2
-photo-id: 1418878
-secret: 1e92283336
-size: m
--->
+
+<table>
+	<tr>
+		<td>Ingrese filtro:</td> 
+		<td><%= f.text_field :machine_tags %></td>
+	</tr>
+	<tr>
+		<td>Ingrese cantidad:</td> 
+		<td><%= f.text_field :per_page %></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="center"><%= f.submit "Buscar fotos" %></td>
+	</tr>	
+</table>
 
 <% list = flickr.interestingness.getList(:machine_tag => 'gotita',:per_page => '3') %>
 
@@ -26,3 +34,20 @@ size: m
 	</tr>
   	<% end %>	
 </table>
+
+<% end %>
+
+
+<!--
+Direcciones URL de origen de fotos
+Fuente: http://www.flickr.com/services/api/misc.urls.html
+
+http://farm1.staticflickr.com/2/1418878_1e92283336_m.jpg
+
+farm-id: 1
+server-id: 2
+photo-id: 1418878
+secret: 1e92283336
+size: m
+-->
+
