@@ -7,17 +7,17 @@
 <table>
 	<tr>
 		<td>Ingrese filtro:</td> 
-		<td><%= f.text_field :machine_tags %></td>
+		<td><%= f.text_field :machine_tags, :value => "autos" %></td>
 	</tr>
 	<tr>
 		<td>Ingrese cantidad:</td> 
-		<td><%= f.text_field :per_page %></td>
+		<td><%= f.text_field :per_page, :value => "3" %></td>
 	</tr>
 	<tr>
 		<td colspan="2" align="center"><%= f.submit "Buscar fotos" %></td>
 	</tr>	
 </table>
-
+  
 <% list = flickr.photos.search(:tags => @photo.machine_tags, :per_page => @photo.per_page) %>
 
 <table>
